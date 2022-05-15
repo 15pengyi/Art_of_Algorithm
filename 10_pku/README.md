@@ -34,6 +34,7 @@ Sort and Search
 * Majority Element:
 * Peak Element:
 * Search:
+* Traversal: 1111
 
 Architecture
 
