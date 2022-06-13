@@ -34,16 +34,18 @@ Sort and Search
 * Majority Element:
 * Peak Element:
 * Search:
-* Traversal: 1111
+* Traversal: 1111, 1164
 
 Architecture
 
-* Big Integers: 1001
+* Big Integers: 1001, 1131
 * Cache:
 
 Dynamic Programming
 
+* Graph: 1125
 * Map: 1071
+* Tree: 1155
 * Palindrome:
 * Jump Game:
 * Word Break:

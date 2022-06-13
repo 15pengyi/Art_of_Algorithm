@@ -15,4 +15,12 @@ More than coding.
 ## Challenges
 
 * UVA: Online Judge for ACM-ICPC
-* PKU: Peking University Judge Online for ACIP / ICPC
+* POJ: Peking University Judge Online for ACIP / ICPC
+
+## Others
+
+* Awesome Competitive Programming: <https://github.com/lnishan/awesome-competitive-programming>
+* Algorithms for Competitive Programming: <https://cp-algorithms.com/>
+* OI Wiki: <https://oi-wiki.org/>
+* 背包九讲
+* 男人八题
