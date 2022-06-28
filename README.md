@@ -4,7 +4,7 @@ More than coding.
 
 ## Topics
 
-* Math
+* Math: Combinatorics
 * Data Structure
 
 ## Books
