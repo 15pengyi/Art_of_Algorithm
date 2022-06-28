@@ -220,7 +220,29 @@ The solution to $R_0 = \alpha$; $R_n = R_{n−1} + \beta + \gamma n + \delta n^2
 
 The area under the curve $f(x)=x^2$ is $\int_0^n x^2 dx = \frac{1}{3}n^3$; therefore we know that $S^{(2)}_n$ is approximately $\frac{1}{3}n^3$. 1) One way to use this fact is to examine the error in the approximation $E_n = S^{(2)}_n - \frac{1}{3}n^3$. We find that $E_n = E_{n-1} + n - \frac{1}{3}$. 2) Another way to pursue the integral approach is to find a formula for $E_n$ by summing the areas of the wedge-shaped error terms. Then we get the answer.
 
+---
+
 **Method 5**: Expand and contract.
+
+$$
+\begin{array}{rcll}
+S^{(2)}_n & = & \sum_{1\le k\le n}k^2 = \sum_{1\le j\le k\le n}k\\
+& = & \sum_{1\le j\le n} \sum_{1\le k\le n}k\\
+& = & \sum_{1\le j\le n} \left(\frac{j+n}{2}\right)(n - j + 1)\\
+& = & \frac{1}{2}\sum_{1\le j\le n} \left(n(n+1) + j - j^2\right)\\
+& = & \frac{1}{2}n^2(n+1) + \frac{1}{4}n(n+1) - \frac{1}{2}S^{(2)}_n\\
+\end{array}
+$$
+
+**Method 6**: Use finite calculus.
+
+---
+
+**Method 7**: Use generating functions.
+
+---
+
+**Method 8**: Use telescoping sum.
 
 ---
 
