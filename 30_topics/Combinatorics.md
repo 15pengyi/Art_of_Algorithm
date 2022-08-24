@@ -201,9 +201,9 @@ where $r_k$ is the number of ways to place $k$ nonattacking rooks on the $n$-by-
 
 ---
 
-### 4.2 M$\text{\"o}$bius Inversion
+### 4.2 M$\"o$bius Inversion
 
-Let $(X,\le)$ be a partially ordered set with a smallest element $0$. Let $\mu$ be its M$\text{\"o}$bius function, and let $F : X \rightarrow \mathfrak{R}$ be a real-valued function defined on $X$. Let the function $G : X \rightarrow \mathfrak{R}$ be defined by $G(x) = \sum_{\{z: z \le x\}} F(z), (x \in X)$. Then
+Let $(X,\le)$ be a partially ordered set with a smallest element $0$. Let $\mu$ be its M$\"o$bius function, and let $F : X \rightarrow \mathfrak{R}$ be a real-valued function defined on $X$. Let the function $G : X \rightarrow \mathfrak{R}$ be defined by $G(x) = \sum_{\{z: z \le x\}} F(z), (x \in X)$. Then
 
 $$
 F(x) = \sum_{\{y: y \le x\}} G(y)\mu(y, x), (x \in X),
@@ -465,7 +465,7 @@ $h_n^{(k)}$ counts the number of regions into which $k$-dimensional space is div
 
 ---
 
-### 6.5 Lattice Paths and Schr$\text{\"o}$der Numbers
+### 6.5 Lattice Paths and Schr$\"o$der Numbers
 
 The number of rectangular lattice paths from $(r, s)$ to $(p, q)$ equals the binomial coefficient
 
@@ -559,7 +559,7 @@ where $R(p, q)$ equal the number of subdiagonal $HVD$-lattice paths from $(0,0)$
 
 ---
 
-### 7.5 P$\text{\'o}$lya Counting
+### 7.5 P$\'o$lya Counting
 
 * Permutation & Symmetry Groups
 * Burnside's Theorem
