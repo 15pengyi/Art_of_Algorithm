@@ -176,7 +176,8 @@ The operation of splitting off a term is the basis of a perturbation method that
 For two or more indices, there are a general associative law and a general distributive law. We have an interesting formula:
 
 $$
-\left(\sum_{k=1}^n a_k\right) \left(\sum_{k=1}^n b_k\right) = n \sum_{k=1}^n a_k b_k - \sum_{1\le j<k\le n}^n (a_k - a_j)(b_k - b_j),$$
+\left(\sum_{k=1}^n a_k\right) \left(\sum_{k=1}^n b_k\right) = n \sum_{k=1}^n a_k b_k - \sum_{1\le j<k\le n}^n (a_k - a_j)(b_k - b_j),
+$$
 
 which yields Chebyshev's monotonic inequalities as a special case.
 
@@ -686,8 +687,7 @@ How to get from a given sequence of residues ($x \mod m_1, \ldots, x \mod m_r$) 
 
 ---
 
-How many solutions are there to the congruence
-$x^2 \equiv 1 (\mod m)$?
+How many solutions are there to the congruence $x^2 \equiv 1 (\mod m)$?
 
 * First consider the case that $m$ is a prime power, $p^k$, where $k > 0$.
 * If $p > 2$, there are exactly two solutions, $x \equiv +1$ and $x \equiv -1$.
@@ -766,6 +766,8 @@ $$
 ---
 
 ## 5 Binomial Coefficients
+
+$\big(\begin{smallmatrix}n\\k\end{smallmatrix}\big)$ can be read "$n$ choose $k$".
 
 ---
 
@@ -1086,8 +1088,8 @@ where $D$ is the operator $\frac{d}{dz}$, $\vartheta$ is the operator $z\frac{d}
 
 Gosper discovered a beautiful way to find indefinite sums $\sum t(k) \delta k$ whenever $t$ belong to hypergeometric terms.
 
-- Step 1: express the term ratio in the special form $\frac{t(k+1)}{t(k)} =\frac{p(k+1)}{p(k)}\frac{q(k)}{r(k+1)}$, where $p$, $q$, and $r$ are polynomials subject to the following condition: $(k + \alpha) \backslash q(k)$ and $(k + \beta) \backslash r(k) \Longrightarrow \alpha - \beta$ is not a positive integer.
-- Step 2: find a hypergeometric term $T(k)$ such that $t(k) = T(k+1) - T(k)$, where $T(k) = \frac{r(k)s(k)t(k)}{p(k)}$. If we can find a polynomial $s(k)$ satisfying $p(k) = q(k)s(k + 1) - r(k)s(k)$ we've found $\sum t(k) \delta k$; otherwise, there's no $T$.
+* Step 1: express the term ratio in the special form $\frac{t(k+1)}{t(k)} =\frac{p(k+1)}{p(k)}\frac{q(k)}{r(k+1)}$, where $p$, $q$, and $r$ are polynomials subject to the following condition: $(k + \alpha) \backslash q(k)$ and $(k + \beta) \backslash r(k) \Longrightarrow \alpha - \beta$ is not a positive integer.
+* Step 2: find a hypergeometric term $T(k)$ such that $t(k) = T(k+1) - T(k)$, where $T(k) = \frac{r(k)s(k)t(k)}{p(k)}$. If we can find a polynomial $s(k)$ satisfying $p(k) = q(k)s(k + 1) - r(k)s(k)$ we've found $\sum t(k) \delta k$; otherwise, there's no $T$.
 
 ---
 
@@ -1130,121 +1132,3 @@ With the **Gosper-Zeilberger** method, we are able to get Ap$\'e$ry's once-incre
 $$
 (n + 1)^3A_n + (n + 2)^3A_{n+2} = (2n + 3)(17n^2+51n+39)A_{n+1}.
 $$
-
----
-
-## 6 Special Numbers
-
----
-
-### 6.1 Stirling Numbers
-
----
-
-### 6.2 Eulerian Numbers
-
----
-
-### 6.3 Harmonic Numbers
-
----
-
-### 6.4 Harmonic Summation
-
----
-
-### 6.5 Bernoulli Numbers
-
----
-
-### 6.6 Fibonacci Numbers
-
----
-
-### 6.7 Continuants
-
----
-
-## 7 Generating Functions
-
----
-
-### 7.1 Domino Theory and Change
-
----
-
-### 7.2 Basic Maneuvers
-
----
-
-### 7.3 Solving Recurrences
-
----
-
-### 7.4 Special Generating Functions
-
----
-
-### 7.5 Convolutions
-
----
-
-### 7.6 Exponential Generating Functions
-
----
-
-### 7.7 Dirichlet Generating Functions
-
----
-
-## 8 Discrete Probability
-
----
-
-### 8.1 Definitions
-
----
-
-### 8.2 Mean and Variance
-
----
-
-### 8.3 Probability Generating Functions
-
----
-
-### 8.4 Flipping Coins
-
----
-
-### 8.5 Hashing
-
----
-
-## 9 Asymptotics
-
----
-
-### 9.1 A Hierarchy
-
----
-
-### 9.2 O Notation
-
----
-
-### 9.3 O Manipulation
-
----
-
-### 9.4 Two Asymptotic Tricks
-
----
-
-### 9.5 Euler's Summation Formula
-
----
-
-### 9.6 Final Summations
-
----
