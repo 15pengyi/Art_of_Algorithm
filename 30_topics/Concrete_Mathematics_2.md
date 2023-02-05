@@ -236,8 +236,6 @@ $$
 
 ### 6.7 Continuants
 
----
-
 The continuant polynomial $K_n$ is defined by the following recurrence:
 
 $$
@@ -248,10 +246,18 @@ K_n(x_1,\ldots,x_n) & = & K_{n-1}(x_1,\ldots,x_{n-1})x_n+K_{n-2}(x_1,\ldots,x_{n
 \end{array}
 $$
 
+---
+
+A Morse code sequence of length $n$ that has $k$ dashes has $n-2k$ dots and $n - k$ symbols altogether:
+
+$$
+K_n(z,\ldots,z) = \sum_{k=0}^n \begin{pmatrix}n-k\\k\end{pmatrix} z^{n-2k}.
+$$
+
 We have the identity
 
 $$
-F_{n+1} = K_n(z,\ldots,z)|_{z=1} = \sum_{k=0}^n \begin{pmatrix}n-k\\k\end{pmatrix} z^{n-2k}|_{z=1}.
+F_{n+1} = K_n(z,\ldots,z)|_{z=1} = \sum_{k=0}^n \begin{pmatrix}n-k\\k\end{pmatrix}.
 $$
 
 A remarkable law:
@@ -281,6 +287,8 @@ $$
 ---
 
 ## 7 Generating Functions
+
+To manipulate infinite series that "generate" those sequences.
 
 ---
 
