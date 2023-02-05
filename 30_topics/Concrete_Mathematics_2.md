@@ -221,16 +221,62 @@ which leads to the Fibonacci number system.
 The generating function of the Fibonacci numbers
 
 $$
-F(z) = \sum_{n \ge 0} F_n z^n = \frac{z}{1-z-z^2}.
+F(z) = \sum_{n \ge 0} F_n z^n = \frac{z}{1-z-z^2} = \frac{1}{\sqrt{5}}\left( \frac{1}{1-\phi z} - \frac{1}{1-\hat{\phi}z} \right),
+$$
+
+where $\phi=\frac{1+\sqrt{5}}{2}$ is the golden ratio, $\hat{\phi}=\frac{1-\sqrt{5}}{2}$.
+
+The closed form for the coefficient of $z^n$ is
+
+$$
+F_n = \frac{1}{\sqrt{5}} \left( \phi^n - \hat{\phi}^n\right)=\lfloor \frac{\phi^n}{\sqrt{5}} + \frac{1}{2}\rfloor.
 $$
 
 ---
 
-P. 310
+### 6.7 Continuants
 
 ---
 
-### 6.7 Continuants
+The continuant polynomial $K_n$ is defined by the following recurrence:
+
+$$
+\begin{array}{rcl}
+K_0() & = & 1;\\
+K_1(x_1) & = & x_1;\\
+K_n(x_1,\ldots,x_n) & = & K_{n-1}(x_1,\ldots,x_{n-1})x_n+K_{n-2}(x_1,\ldots,x_{n-2}).
+\end{array}
+$$
+
+We have the identity
+
+$$
+F_{n+1} = K_n(z,\ldots,z)|_{z=1} = \sum_{k=0}^n \begin{pmatrix}n-k\\k\end{pmatrix} z^{n-2k}|_{z=1}.
+$$
+
+A remarkable law:
+
+$$
+K_{m+n}(x_1, \ldots, x_{m+n}) K_k(x_{m+1}, \ldots, x_{m+k})\\
+= K_{m+k}(x_1, \ldots, x_{m+k}) K_n(x_{m+1}, \ldots, x_{m+n})\\
++ (-1)^k K_{m-1}(x_1, \ldots, x_{m-1})K_{n-k-1}(x_{m+k+2}, \ldots, x_{m+n}).
+$$
+
+---
+
+If Euclid's algorithm finds the greatest common divisor $d$ in $k$ steps, after computing the sequence of quotients $q_1, \ldots q_k$, then the starting numbers were $K(q_1, q_2, \ldots, q_k)d$ and $K(q_2, \ldots, q_k)d$.
+
+Continuants are closely connected with the Stern-Brocot tree:
+
+$$
+f(R^{a_1}\cdots L^{a_{n-1}}) = \frac{K_{n+1}(a_0, a_1, \ldots, a_{n-1}, 1)}{K_{n}(a_1, \ldots, a_{n-1}, 1)}.
+$$
+
+A remarkable identity:
+
+$$
+\frac{z^{F_1}}{1+\frac{z^{F_2}}{1+\frac{z^{F_3}}{\dots}}} = (1-z)\sum_{n \ge 1} z^{\lfloor n \phi \rfloor}.
+$$
 
 ---
 
@@ -239,6 +285,26 @@ P. 310
 ---
 
 ### 7.1 Domino Theory and Change
+
+---
+
+How many ways $T_n$ are there to completely cover a $2 \times n$ rectangle with $2 \times 1$ dominoes?
+
+$$
+T_n = F_{n+1}, \; \text{for} \; n \ge 0.
+$$
+
+$T$ are called generating functions, because they generate the coefficients of interest:
+
+$$
+T = \frac{1}{1-◨-◫} = \frac{1}{1-◨-⬒^2} = \frac{1}{1-z-z^2}.
+$$
+
+Thus domino tilings are closely related to the continuant polynomials.
+
+---
+
+P. 336
 
 ---
 

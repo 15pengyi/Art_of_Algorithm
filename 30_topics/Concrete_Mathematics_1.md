@@ -993,6 +993,30 @@ $$
 \mathcal{B}_t(z) = \sum_{k \ge 0}(tk)^{\underline{k-1}}\frac{z^k}{k!}.
 $$
 
+A relation that shows further connections between the functions $\mathcal{B}_{-1}(z)$ and $\mathcal{B}_{2}(z)$:
+
+$$
+\begin{array}{rcl}
+\frac{\mathcal{B}_{-1}(z)^{n+1}-(-z)^{n+1}\mathcal{B}_2(-z)^{n+1}}{\sqrt{1+4z}} & = & \sum_{k
+\le n} \begin{pmatrix}n-k\\k\end{pmatrix} z^k.\\
+\end{array}
+$$
+
+---
+
+$$
+\begin{array}{rcl}
+\mathcal{B}_2(z) & = & \sum_k \begin{pmatrix}2k+1\\k\end{pmatrix} \frac{1}{1+2k}z^k = \frac{1-\sqrt{1-4z}}{2z}.\\
+\mathcal{B}_2(z)^r & = & \sum_k \begin{pmatrix}2k+r\\k\end{pmatrix} \frac{1}{r+2k}z^k.\\
+\frac{\mathcal{B}_2(z)^r}{\sqrt{1-4z}} & = & \sum_k \begin{pmatrix}2k+r\\k\end{pmatrix} z^k.\\
+\mathcal{B}_{-1}(z) & = & \sum_k \begin{pmatrix}1-k\\k\end{pmatrix} \frac{1}{1-k}z^k = \frac{1+\sqrt{1+4z}}{2z}.\\
+\mathcal{B}_{-1}(z)^r & = & \sum_k \begin{pmatrix}r-k\\k\end{pmatrix} \frac{r}{r-k}z^k.\\
+\frac{\mathcal{B}_{-1}(z)^r}{\sqrt{1+4z}} & = & \sum_k \begin{pmatrix}r-k\\k\end{pmatrix} z^k.\\
+\end{array}
+$$
+
+---
+
 The generalized exponential series:
 
 $$
