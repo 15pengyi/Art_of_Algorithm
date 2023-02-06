@@ -281,7 +281,7 @@ $$
 A remarkable identity:
 
 $$
-\frac{z^{F_1}}{1+\frac{z^{F_2}}{1+\frac{z^{F_3}}{\dots}}} = (1-z)\sum_{n \ge 1} z^{\lfloor n \phi \rfloor}.
+\frac{z^{F_1}}{1+\frac{z^{F_2}}{1+\frac{z^{F_3}}{\ddots}}} = (1-z)\sum_{n \ge 1} z^{\lfloor n \phi \rfloor}.
 $$
 
 ---
@@ -298,21 +298,58 @@ To manipulate infinite series that "generate" those sequences.
 
 How many ways $T_n$ are there to completely cover a $2 \times n$ rectangle with $2 \times 1$ dominoes?
 
-$$
-T_n = F_{n+1}, \; \text{for} \; n \ge 0.
-$$
-
 $T$ are called generating functions, because they generate the coefficients of interest:
 
 $$
-T = \frac{1}{1-◨-◫} = \frac{1}{1-◨-⬒^2} = \frac{1}{1-z-z^2}.
+T
+= \frac{\begin{smallmatrix}┃\\┃\end{smallmatrix}}{\begin{smallmatrix}┃\\┃\end{smallmatrix}-\begin{smallmatrix}┏┓\\┃┃\\┗┛\end{smallmatrix}-\begin{smallmatrix}┏━┓\\┣━┫\\┗━┛\end{smallmatrix}}
+= \frac{\begin{smallmatrix}┃\\┃\end{smallmatrix}}{\begin{smallmatrix}┃\\┃\end{smallmatrix}-\begin{smallmatrix}┏┓\\┃┃\\┗┛\end{smallmatrix}-\begin{smallmatrix}\hphantom{┏}\hphantom{┏}\hphantom{┏}\\┏━┓\\┗━┛\end{smallmatrix}^2}
+= \frac{1}{1-z-z^2}.
+$$
+
+$$
+T_n = \sum_{m} \begin{pmatrix}n-m\\m\end{pmatrix} = F_{n+1}.
 $$
 
 Thus domino tilings are closely related to the continuant polynomials.
 
 ---
 
-P. 336
+How many ways $T_n$ are there to completely cover a $3 \times n$ rectangle with $2 \times 1$ dominoes?
+
+$$
+U = \begin{smallmatrix}┃\\┃\\┃\end{smallmatrix} + \begin{smallmatrix}┏┓\hphantom{┏}\\┃┃\hphantom{┏}\\┣┻┓\\┗━┛\end{smallmatrix}V + \begin{smallmatrix}┏━┓\\┣┳┛\\┃┃\hphantom{┏}\\┗┛\hphantom{┏}\end{smallmatrix}\Lambda + \begin{smallmatrix}┏━┓\\┣━┫\\┣━┫\\┗━┛\end{smallmatrix}U,
+$$
+
+$$
+V = \begin{smallmatrix}┏┓\\┃┃\\┗┛\\\hphantom{┏}\hphantom{┏}\end{smallmatrix}U + \begin{smallmatrix}┏━┓\hphantom{┏}\\┣━┫\hphantom{┏}\\┗┳┻┓\\\hphantom{┏}┗━┛\end{smallmatrix}V,
+$$
+
+$$
+\Lambda = \begin{smallmatrix}\hphantom{┏}\hphantom{┏}\\┏┓\\┃┃\\┗┛\end{smallmatrix}U + \begin{smallmatrix}\hphantom{┏}┏━┓\\┏┻┳┛\\┣━┫\hphantom{┏}\\┗━┛\hphantom{┏}\end{smallmatrix}\Lambda.
+$$
+
+---
+
+The final equation can be solved for $U$:
+
+$$
+\begin{array}{rcl}
+U & = &\frac{\begin{smallmatrix}┃\\┃\\┃\end{smallmatrix}}{\begin{smallmatrix}┃\\┃\\┃\end{smallmatrix} - \begin{smallmatrix}┏┓\hphantom{┏}\\┃┃\hphantom{┏}\\┣┻┓\\┗━┛\end{smallmatrix}\left(\begin{smallmatrix}┃\\┃\\┃\end{smallmatrix} - \begin{smallmatrix}┏━┓\hphantom{┏}\\┣━┫\hphantom{┏}\\┗┳┻┓\\\hphantom{┏}┗━┛\end{smallmatrix} \right)^{-1} \begin{smallmatrix}┏┓\\┃┃\\┗┛\\\hphantom{┏}\hphantom{┏}\end{smallmatrix} - \begin{smallmatrix}┏━┓\\┣┳┛\\┃┃\hphantom{┏}\\┗┛\hphantom{┏}\end{smallmatrix} \left(\begin{smallmatrix}┃\\┃\\┃\end{smallmatrix} - \begin{smallmatrix}\hphantom{┏}┏━┓\\┏┻┳┛\\┣━┫\hphantom{┏}\\┗━┛\hphantom{┏}\end{smallmatrix} \right)^{-1} \begin{smallmatrix}\hphantom{┏}\hphantom{┏}\\┏┓\\┃┃\\┗┛\end{smallmatrix} - \begin{smallmatrix}┏━┓\\┣━┫\\┣━┫\\┗━┛\end{smallmatrix}}\\
+ & = & \frac{\begin{smallmatrix}┃\\┃\end{smallmatrix} - \begin{smallmatrix}\hphantom{┏}\hphantom{┏}\hphantom{┏}\\┏━┓\\┗━┛\end{smallmatrix}^3}{\left( \begin{smallmatrix}┃\\┃\end{smallmatrix} - \begin{smallmatrix}\hphantom{┏}\hphantom{┏}\hphantom{┏}\\┏━┓\\┗━┛\end{smallmatrix}^3 \right)^2 - 2 \begin{smallmatrix}┏┓\\┃┃\\┗┛\end{smallmatrix}^2 \begin{smallmatrix}\hphantom{┏}\hphantom{┏}\hphantom{┏}\\┏━┓\\┗━┛\end{smallmatrix}}\\
+ & = & \frac{1 - z^3}{1 - 4z^3 + z^6}.
+\end{array}
+$$
+
+The total number of $3 \times n$ tilings is
+
+$$
+U_n = \sum_m \begin{pmatrix}n-m\\m\end{pmatrix} 2^{\frac{n}{2} - m}.
+$$
+
+---
+
+P. 341
 
 ---
 
