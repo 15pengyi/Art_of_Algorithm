@@ -296,7 +296,7 @@ To manipulate infinite series that "generate" those sequences.
 
 ---
 
-How many ways $T_n$ are there to completely cover a $2 \times n$ rectangle with $2 \times 1$ dominoes?
+Q1 - How many ways $T_n$ are there to completely cover a $2 \times n$ rectangle with $2 \times 1$ dominoes?
 
 $T$ are called generating functions, because they generate the coefficients of interest:
 
@@ -315,7 +315,7 @@ Thus domino tilings are closely related to the continuant polynomials.
 
 ---
 
-How many ways $T_n$ are there to completely cover a $3 \times n$ rectangle with $2 \times 1$ dominoes?
+Q2 - How many ways $T_n$ are there to completely cover a $3 \times n$ rectangle with $2 \times 1$ dominoes?
 
 $$
 U = \begin{smallmatrix}┃\\┃\\┃\end{smallmatrix} + \begin{smallmatrix}┏┓\hphantom{┏}\\┃┃\hphantom{┏}\\┣┻┓\\┗━┛\end{smallmatrix}V + \begin{smallmatrix}┏━┓\\┣┳┛\\┃┃\hphantom{┏}\\┗┛\hphantom{┏}\end{smallmatrix}\Lambda + \begin{smallmatrix}┏━┓\\┣━┫\\┣━┫\\┗━┛\end{smallmatrix}U,
@@ -349,11 +349,57 @@ $$
 
 ---
 
-P. 341
+Q3 - How many ways are there to pay 50 cents?
+
+Let $P$, $N$, $D$, $Q$, and $C$ be the generating functions of the numbers of ways to pay n cents when we're allowed to use coins that are worth at most 1, 5, 10, 25, and 50 cent, we have
+
+$$
+P = \emptyset + \textcircled{\scriptsize 1} + \textcircled{\scriptsize 1}^2 + \cdots,
+$$
+
+$$
+N = (\emptyset + \textcircled{\scriptsize 5} + \textcircled{\scriptsize 5}^2 + \cdots)P,
+$$
+
+$$
+D = (\emptyset + \textcircled{\scriptsize 10} + \textcircled{\scriptsize 10}^2 + \cdots)N,
+$$
+
+$$
+Q = (\emptyset + \textcircled{\scriptsize 25} + \textcircled{\scriptsize 25}^2 + \cdots)D,
+$$
+
+$$
+C = (\emptyset + \textcircled{\scriptsize 50} + \textcircled{\scriptsize 50}^2 + \cdots)Q.
+$$
+
+---
+
+Multiplying the equations together gives us the compact expression
+
+$$
+C = \frac{1}{1-z}\frac{1}{1-z^5}\frac{1}{1-z^{10}}\frac{1}{1-z^{25}}\frac{1}{1-z^{50}}.
+$$
+
+The corresponding generating function is an inffinite product of fractions,
+
+$$
+P = \frac{1}{1-z}\frac{1}{1-z^2}\frac{1}{1-z^{3}}\cdots,
+$$
+
+and the coefficient of $z^n$ when these factors are fully multiplied out is called $p(n)$, the number of partitions of $n$.
 
 ---
 
 ### 7.2 Basic Maneuvers
+
+---
+
+$G(z) = g_0 + g_1 z^ + \cdots = \sum_{n \ge 0}g_n z^n$ is the generating function for the sequence $\langle g_0, g_1, g_2, \ldots \rangle$.
+
+---
+
+P. 341
 
 ---
 
