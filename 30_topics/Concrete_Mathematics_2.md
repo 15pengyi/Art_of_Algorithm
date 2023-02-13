@@ -397,13 +397,116 @@ and the coefficient of $z^n$ when these factors are fully multiplied out is call
 
 $G(z) = g_0 + g_1 z^ + \cdots = \sum_{n \ge 0}g_n z^n$ is the generating function for the sequence $\langle g_0, g_1, g_2, \ldots \rangle$.
 
+The coefficient of $z^n$ was then the number of combinatorial objects having $n$ occurrences of that feature.
+
 ---
 
-P. 341
+Reshaping generating functions.
+
+$$
+\alpha F(z) + \beta G(z) = \sum_n (\alpha f_n + \beta g_n) z^n;
+$$
+
+$$
+z^m G(z) = \sum_n (g_{n-m}) z^n, \quad \text{integer} \; m > 0;
+$$
+
+$$
+G(cz) = \sum_n c^n g_{n} z^n;
+$$
+
+$$
+G'(z) = \sum_n (n+1) g_{n+1} z^n;
+$$
+
+$$
+\int_0^z G(t) dt = \sum_{n \ge 1} \frac{1}{n} g_{n-1} z^n;
+$$
+
+$$
+F(z)G(z) = \sum_{n} \left( \sum_{k} f_k g_{n-k} \right) z^n;
+$$
 
 ---
 
 ### 7.3 Solving Recurrences
+
+---
+
+Given a sequence $\langle g_{n_i} \rangle$ that satisffies a given recurrence, we seek a closed form for $g_n$ in terms of $n$. A solution  via generating functions proceeds in four steps:
+
+* Step 1. Write down a single equation that expresses $g_n$ in terms of other elements of the sequence.
+* Step 2. Multiply both sides of the equation by $z^n$ and sum over all $n$.
+* Step 3. Solve the resulting equation, getting a closed form for $G(z)$.
+* Step 4. Expand G(z) into a power series and read off the coefficient of $z^n$.
+
+---
+
+Rational Expansion Theorem for Distinct Roots.
+
+If $R(z) = P(z) / Q(z)$, where $Q(z) = q_0(1 - \rho_1 z) \cdots (1 - \rho_l z)$ and the numbers $(\rho_1, \ldots, \rho_l)$ are distinct, and if $P(z)$ is a polynomial of degree less than $l$, then
+
+$$
+[z^n] R(z) = a_1 \rho_1^n + \cdots + a_l \rho_l^n,
+$$
+where
+
+$$
+a_k = \frac{-\rho_k P(1/\rho_k)}{Q'(1/\rho_k)}.
+$$
+
+---
+
+Example 1: Fibonacci numbers.
+
+* Step 1. $g_0 = g_{n-1} + g_{n-2} + [n=1] = \begin{cases}0 & n \le 0\\1 & n = 1\\g_{n-1} + g_{n-2} & n \ge 2\end{cases}$.
+* Step 2. $G(z) = \sum_n g_n z^n = \sum_n g_{n-1} z^n + \sum_n g_{n-2} z^n + \sum_n [n=1] z^n = z G(z) + z^2 G(z) + z$.
+* Step 3. $G(z) = \frac{z}{1 - z - z^2}$.
+* Step 4. According to Rational Expansion Theore for Distinct Roots, $a(\rho)=\frac{-\rho P(1/\rho)}{Q'(1/\rho)} = \frac{\rho}{\rho + 2}$, $a(\phi) = 1 / \sqrt{5}$, $a(\hat{\phi}) = -1 / \sqrt{5}$, so that $F_n = (\phi^n - \hat{\phi}^n) / \sqrt{5}$.
+
+---
+
+General Expansion Theorem for Rational Generating Functions.
+
+If $R(z) = P(z) / Q(z)$, where $Q(z) = q_0(1 - \rho_1 z)^{d_1} \cdots (1 - \rho_l z)^{d_l}$ and the numbers $(\rho_1, \ldots, \rho_l)$ are distinct, and if $P(z)$ is a polynomial of degree less than $d_1 + \cdots + d_l$, then
+
+$$
+[z^n] R(z) = f_1(n) \rho_1^n + \cdots + f_l(n) \rho_l^n, \quad \text{where},
+$$
+
+where each $f_k(n)$ is a polynomial of degree $d_k - 1$ with leading coefficient
+
+$$
+a_k = \frac{(-\rho_k)^{d_k} P(1/\rho_k) d_k}{Q^{(d_k)}(1/\rho_k)}.
+$$
+
+---
+
+Example 2: A more-or-less random recurrence.
+
+* Step 1. $g_0 = g_{n-1} + 2g_{n-2} + (-1)^n[n\ge 0]$.
+* Step 2. $G(z) = \sum_n g_n z^n = \sum_n g_{n-1} z^n + 2 \sum_n g_{n-2} z^n + \sum_{n\ge 0} (-1)^n z^n + \sum_{n=1} z^n = z G(z) + 2z^2 G(z) + \frac{1}{1+z} + z$.
+* Step 3. $G(z) = \frac{1+z+z^2}{(1 - 2z)(1+z)^2}$.
+* Step 4. According to General Expansion Theorem for Rational Generating Functions, $\rho_1 = 2$, $\rho_2 = -1$, $g_n = a_1 2^n + (a_2 n + c)(-1)^n$, where $a_1=\frac{(-2)\left(1+1/2+(1/2)^2\right)}{(-2)(1+1/2)^2}=\frac{7}{9}$, $a_2=\frac{(1)^2\left(1+(-1)+(-1)^2\right)(2)}{(2)\left(1-2(-1)\right)}=\frac{1}{3}$. Plugging in $n = 0$ tells us that $c=\frac{2}{9}$, so that $g_n = \frac{7}{9} 2^n + \left(\frac{1}{3} n + \frac{2}{9}\right)(-1)^n$.
+
+---
+
+Example 3: Mutually recursive sequences - the problem of $3 \times n$ domino tilings.
+
+$U_n$ is the total number of ways of $3 \times n$ domino tilings, $V_n$ is the number of ways to cover a $3 \times n$ rectangle-minus-corner, using $(3n - 1)/2$ dominoes.
+
+* Step 1. $U_n = 2V_{n-1} + U_{n-2} + [n=0]$, $V_n = U_{n-1} + V_{n-2}$.
+* Step 2. $G(z) = \sum_n g_n z^n = \sum_n g_{n-1} z^n + 2 \sum_n g_{n-2} z^n + \sum_{n\ge 0} (-1)^n z^n + \sum_{n=1} z^n = z G(z) + 2z^2 G(z) + \frac{1}{1+z} + z$.
+* Step 3. $G(z) = \frac{1+z+z^2}{(1 - 2z)(1+z)^2}$.
+* Step 4. According to General Expansion Theorem for Rational Generating Functions, $\rho_1 = 2$, $\rho_2 = -1$, $g_n = a_1 2^n + (a_2 n + c)(-1)^n$, where $a_1=\frac{(-2)\left(1+1/2+(1/2)^2\right)}{(-2)(1+1/2)^2}=\frac{7}{9}$, $a_2=\frac{(1)^2\left(1+(-1)+(-1)^2\right)(2)}{(2)\left(1-2(-1)\right)}=\frac{1}{3}$. Plugging in $n = 0$ tells us that $c=\frac{2}{9}$, so that $g_n = \frac{7}{9} 2^n + \left(\frac{1}{3} n + \frac{2}{9}\right)(-1)^n$.
+
+---
+
+Example 4: A closed form for change.
+
+---
+
+P. 356
 
 ---
 
