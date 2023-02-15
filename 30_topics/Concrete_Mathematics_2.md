@@ -401,6 +401,12 @@ The coefficient of $z^n$ was then the number of combinatorial objects having $n$
 
 ---
 
+Generating functions for simple sequences.
+
+![bg right:66% fit](Concrete_Mathematics/Table_generating_functions_for_simple_sequences.png)
+
+---
+
 Reshaping generating functions.
 
 $$
@@ -496,17 +502,46 @@ Example 3: Mutually recursive sequences - the problem of $3 \times n$ domino til
 $U_n$ is the total number of ways of $3 \times n$ domino tilings, $V_n$ is the number of ways to cover a $3 \times n$ rectangle-minus-corner, using $(3n - 1)/2$ dominoes.
 
 * Step 1. $U_n = 2V_{n-1} + U_{n-2} + [n=0]$, $V_n = U_{n-1} + V_{n-2}$.
-* Step 2. $G(z) = \sum_n g_n z^n = \sum_n g_{n-1} z^n + 2 \sum_n g_{n-2} z^n + \sum_{n\ge 0} (-1)^n z^n + \sum_{n=1} z^n = z G(z) + 2z^2 G(z) + \frac{1}{1+z} + z$.
-* Step 3. $G(z) = \frac{1+z+z^2}{(1 - 2z)(1+z)^2}$.
-* Step 4. According to General Expansion Theorem for Rational Generating Functions, $\rho_1 = 2$, $\rho_2 = -1$, $g_n = a_1 2^n + (a_2 n + c)(-1)^n$, where $a_1=\frac{(-2)\left(1+1/2+(1/2)^2\right)}{(-2)(1+1/2)^2}=\frac{7}{9}$, $a_2=\frac{(1)^2\left(1+(-1)+(-1)^2\right)(2)}{(2)\left(1-2(-1)\right)}=\frac{1}{3}$. Plugging in $n = 0$ tells us that $c=\frac{2}{9}$, so that $g_n = \frac{7}{9} 2^n + \left(\frac{1}{3} n + \frac{2}{9}\right)(-1)^n$.
+* Step 2. $U(z) = 2zV(z) + z^2U(z) + 1$, $V(z) = zU(z) + z^2 V(z)$.
+* Step 3. $U(z) = \frac{1-z^2}{1 - 4z^2 + z^4}$, $V(z) = \frac{z}{1 - 4z^2 + z^4}$.
+* Step 4. Consider the generating function $W(z)=\frac{1}{1-4z+z^2}$, we have $V(z) = zW(z^2)$ and $U(z) = (1 - z^2)W(z^2)$, hence $V_{2n+1} = W_n$ and $U_{2n} = W_n - W_{n-1}$. Thus we have
+
+$$
+V_{2n+1} = W_n = \frac{3+2\sqrt{3}}{6}(2+\sqrt{3})^n + \frac{3-2\sqrt{3}}{6}(2-\sqrt{3})^n;\\
+U_{2n} = W_n - W_{n-1} = \frac{(2+\sqrt{3})^n}{3-\sqrt{3}} + \frac{(2-\sqrt{3})^n}{3+\sqrt{3}}=\left\lceil \frac{(2+\sqrt{3})^n}{3-\sqrt{3}} \right\rceil.
+$$
 
 ---
 
 Example 4: A closed form for change.
 
+* Step 3. $C(z)=\frac{1}{1-z}\frac{1}{1-z^5}\frac{1}{1-z^{10}}\frac{1}{1-z^{25}}\frac{1}{1-z^{50}} = (1 + z + z^2 + z^3 + z^4) \check{C}(z^5)$, where $\check{C}(z)=\frac{1}{1-z}\frac{1}{1-z}\frac{1}{1-z^2}\frac{1}{1-z^{5}}\frac{1}{1-z^{10}}=\frac{A(z)}{(1-z^{10})^5}$, $A(z)=(1 + z + \cdots + z^9)^2(1 + z^2 + \cdots + z^8)(1 + z^5)$.
+* Step 4. When $n = 10q + r$ and $0 \le r < 10$,
+
+$$
+\begin{array}{rcl}
+\check{C}_{10q+r} &=& \sum_{j,k}A_j \begin{pmatrix}k+4\\4\end{pmatrix}[10q+r=10k+j]\\
+&=& A_r \begin{pmatrix}q+4\\4\end{pmatrix} + A_{r+10} \begin{pmatrix}q+3\\4\end{pmatrix} + A_{r+20} \begin{pmatrix}q+2\\4\end{pmatrix} + A_{r+30} \begin{pmatrix}q+1\\4\end{pmatrix}.
+\end{array}
+$$
+
 ---
 
-P. 356
+Example 5: A divergent series.
+
+* Step 1. $g_n = ng_{n-1} + [n=0]$.
+* Step 2. $G(z) = \sum_{n}n g_{n-1}z^n + \sum_{n=0}z^n = 1 + \sum_{n} (n+1)g_n z^{n+1} = 1 + z^2G'(z) + zG(z)$.
+* Step 3. Taking the derivative of both sides, we have $G' = z^2G'' + 3zG' + G$, and rewrite this using the $\vartheta$ operator, where $\vartheta G = zG'$, $\vartheta^2 G = z^2 G'' + zG'$. Therefore $\vartheta G = z(\vartheta + 1)^2G$. According to Hypergeometric Transformations in Chapter 5, the solution with $g_0 = 1$ is the hypergeometric series $F\left(\begin{matrix}1,1\\\;\end{matrix}\middle|z\right)$.
+* Step 4. $G(z) = F\left(\begin{matrix}1,1\\\;\end{matrix}\middle|z\right) = \sum_{n \ge 0} \frac{1^{\overline{n}}1^{\overline{n}}z^n}{n!} = \sum_{n \ge 0} n!z^n$.
+
+---
+
+Example 6: A recurrence that goes all the way back. How many spanning trees $f_n$ are in such a graph (a fan of order $n$)?
+
+* Step 1. Consider (i) how the topmost vertex (vertex $n$) is connected to the rest of the spanning tree, and (ii) some number $k \le n$ such that vertices $n, n - 1, \ldots, k$ are connected directly but the edge between $k$ and $k - 1$ is not present. We have $f_n = f_{n-1} + \left( f_{n-1} + f_{n-2} + \cdots + f_1 + 1 \right) = f_{n-1} + \sum_{k<n} f_k + [n>0]$.
+* Step 2. $F(z) = \sum_n f_n z^n = zF(z) + \sum_k f_kz^k \sum_n [n>k]z^{n-k} + \frac{z}{1 - z} = zF(z) + F(z)\frac{z}{1 - z} + \frac{z}{1 - z}$.
+* Step 3. $F(z) = \frac{z}{1-3z+z^2}$.
+* Step 4. $f_n = F_{2n}$, for $n \ge 0$.
 
 ---
 
@@ -514,7 +549,17 @@ P. 356
 
 ---
 
+Generating functions for special numbers.
+
+![bg right:66% fit](Concrete_Mathematics/Table_generating_functions_for_special_numbers.png)
+
+---
+
 ### 7.5 Convolutions
+
+---
+
+P. 366
 
 ---
 
