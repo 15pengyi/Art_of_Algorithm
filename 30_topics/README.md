@@ -3,15 +3,14 @@
 ## Math | 数学
 
 * Number Theory
-  * The Theory of Numbers in the Nineteenth Century
+  * Ch. 34, The Theory of Numbers in the Nineteenth Century, [Mathematical Thought](Mathematical_Thought.md)
+  * Ch. 4, Number Theory, [Concrete Mathematics](Concrete_Mathematics.md).
 * Geometry
-  * The Revival of Projective Geometry
-  * NonEuclidean Geometry
-* Discrete Mathematics
-  * Combinatorics
-  * Graph Theory
-* Applied mathematics
-  * Mathematical Optimization
+  * Ch. 35, The Revival of Projective Geometry, [Mathematical Thought](Mathematical_Thought.md)
+  * Ch. 36, NonEuclidean Geometry, [Mathematical Thought](Mathematical_Thought.md)
+* Computer Science
+  * Ch. 7, Generating Functions, [Concrete Mathematics](Concrete_Mathematics.md).
+  * Ch. 11, Introduction to Graph Theory, [Combinatorics](Combinatorics.md).
 
 ## Algorithm | 算法
 

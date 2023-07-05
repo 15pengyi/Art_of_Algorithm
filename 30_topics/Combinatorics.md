@@ -7,13 +7,17 @@ math: katex
 
 ---
 
-## 1 Permutations and Combinations | 排列组合
+## 1 What ,Is Combinatorics? | 楔子
+
+---
+
+## 2 Permutations and Combinations | 排列组合
 
 ---
 
 There are four basic counting principles and several counting formulas.
 
-### 1.1 Addition Principle | 加法原理
+### 2.1 Addition Principle | 加法原理
 
 Suppose that a set $S$ is partitioned into pairwise disjoint parts $S_1,S_2 , \ldots,S_m$. The number of objects in $S$ satisfies:
 
@@ -23,7 +27,7 @@ $$
 
 ---
 
-### 1.2 Subtraction Principle | 减法原理
+### 2.2 Subtraction Principle | 减法原理
 
 Let $A$ be a set and let $U$ be a larger set containing $A$. Let $\bar{A} = U \setminus A = \{x \in U: x \notin A\}$ be the complement of $A$ in $U$. Then the number $|A|$ of objects in $A$ is given by the rule
 
@@ -33,7 +37,7 @@ $$
 
 ---
 
-### 1.3 Multiplication Principle | 乘法原理
+### 2.3 Multiplication Principle | 乘法原理
 
 Let $S$ be a set of ordered pairs $(a, b)$ of objects, where the first object $a$ comes from a set of size $p$, and for each choice of object $a$ there are $q$ choices for object $b$. Then the size of $S$ satisfies:
 
@@ -43,7 +47,7 @@ $$
 
 ---
 
-### 1.4 Division Principle | 除法原理
+### 2.4 Division Principle | 除法原理
 
 Let $S$ be a finite set that is partitioned into $k$ parts in such a way that each part contains the same number of objects. Then the number of parts in the partition is given by the rule
 
@@ -53,7 +57,7 @@ $$
 
 ---
 
-### 1.5 Permutations of Sets | 排列数
+### 2.5 Permutations of Sets | 排列数
 
 We denote by $P(n, r)$ the number of $r$-permutations of an $n$-element set. For $n$ and $r$ positive integers with $r \le n$,
 
@@ -63,7 +67,7 @@ $$
 
 ---
 
-### 1.6 Combinations of Sets | 组合数
+### 2.6 Combinations of Sets | 组合数
 
 A combination of $S$ is a choice of a subset of $S$. We denote by $(\begin{smallmatrix}n\\r\end{smallmatrix})$ the number of $r$-subsets of an $n$-element
 set. For $0 \le r \le n$,
@@ -74,7 +78,7 @@ $$
 
 ---
 
-### 1.7 Permutations of Multisets | 多重排列数
+### 2.7 Permutations of Multisets | 多重排列数
 
 Let $S$ be a multiset with objects of $k$ different types, where each object has an infinite repetition number. Then the number of $r$-permutations of $S$ is
 
@@ -82,7 +86,7 @@ $$
 k^r.
 $$
 
-Let $S$ be a multiset with objects of $k$ different types with finite repetition numbers $n_l, n_2, \ldots , n_k$, respectively. Let the size of $S$ be $n = n_l + n_2 + \ldots + n_k$.
+Let $S$ be a multiset with objects of $k$ different types with finite repetition numbers $n_1, n_2, \ldots , n_k$, respectively. Let the size of $S$ be $n = n_1 + n_2 + \ldots + n_k$.
 Then the number of permutations of S equals
 
 $$
@@ -91,7 +95,7 @@ $$
 
 ---
 
-### 1.8 Combinations of Multisets | 多重组合数
+### 2.8 Combinations of Multisets | 多重组合数
 
 Let $S$ be a multiset with objects of $k$ types, each with an infinite repetition number. Then the number of $r$-combinations of $S$ equals
 
@@ -99,7 +103,7 @@ $$
 \begin{pmatrix}r+k-1\\r\end{pmatrix}=\begin{pmatrix}r+k-1\\k-1\end{pmatrix}.
 $$
 
-Let $S$ be a multiset with objects of $k$ different types with finite repetition numbers $n_l, n_2, \ldots , n_k$, respectively. Let the size of $S$ be $n = n_l + n_2 + \ldots + n_k$. Then the number of $r$-combinations of $S$ equals the number of integral solutions of the equation $x_1 + x_2 + \cdots + x_k = r$ that satisfy $0 \le x_i \le n_i \, (i = 1, 2, \ldots, k)$.
+Let $S$ be a multiset with objects of $k$ different types with finite repetition numbers $n_1, n_2, \ldots , n_k$, respectively. Let the size of $S$ be $n = n_1 + n_2 + \ldots + n_k$. Then the number of $r$-combinations of $S$ equals the number of integral solutions of the equation $x_1 + x_2 + \cdots + x_k = r$ that satisfy $0 \le x_i \le n_i \, (i = 1, 2, \ldots, k)$.
 
 ---
 
@@ -111,23 +115,27 @@ $$
 
 ---
 
-## 2 The Pigeonhole Principle | 鸽巢原理（抽屉原理）
+## 3 The Pigeonhole Principle | 鸽巢原理（抽屉原理）
 
 ---
 
 If $n + 1$ objects are distributed into $n$ boxes, then at least one box contains two or more of the objects.
 
-Let $q_l, q_2, . .. ,q_n$ be positive integers. If $q_l + q_2 + ... + q_n - n + 1$ objects are distributed into $n$ boxes, then either the first box contains at least $q_l$ objects, or the second box contains at least $q_2$ objects, ... , or the $n$th box contains at least $q_n$ objects.
+Let $q_1, q_2, . .. ,q_n$ be positive integers. If $q_1 + q_2 + ... + q_n - n + 1$ objects are distributed into $n$ boxes, then either the first box contains at least $q_1$ objects, or the second box contains at least $q_2$ objects, ... , or the $n$th box contains at least $q_n$ objects.
 
 If $m \ge 2$ and $n \ge 2$ are integers, then there is a positive integer $p$ such that $K_p \rightarrow K_m, K_n$.
 
 ---
 
-## 3 The Binomial Coefficients | 二项系数
+## 4 Generating Permutations and Combinations | 排列组合的生成
 
 ---
 
-### 3.1 Pascal's Triangle | 杨辉三角
+## 5 The Binomial Coefficients | 二项系数
+
+---
+
+### 5.1 Pascal's Triangle | 杨辉三角
 
 $$
 \begin{pmatrix}n\\k\end{pmatrix}=\begin{pmatrix}n-1\\k\end{pmatrix}+\begin{pmatrix}n-1\\k-1\end{pmatrix}.
@@ -135,7 +143,7 @@ $$
 
 ---
 
-### 3.2 The Binomial Theorem | 二项式定理
+### 5.2 The Binomial Theorem | 二项式定理
 
 $$
 (x+y)^n=\sum_{k=0}^n \begin{pmatrix}n\\k\end{pmatrix}x^{k}y^{n-k}.
@@ -143,19 +151,19 @@ $$
 
 ---
 
-### 3.3 The Multinomial Theorem | 多项式定理
+### 5.3 The Multinomial Theorem | 多项式定理
 
-Let $n$ be a positive integer. For all $x_l, x_2, \ldots, x_t$,
+Let $n$ be a positive integer. For all $x_1, x_2, \ldots, x_t$,
 
 $$
 (x_1+x_2+\cdots+x_t)^n=\sum \begin{pmatrix}n\\n_1n_2\cdots n_t\end{pmatrix}x_1^{n_1}x_2^{n_2}\cdots x_t^{n_t},
 $$
 
-where the summation extends over all nonnegative integral solutions $n_l, n_2, \ldots, n_t$ of $n_l + n_2 + \cdots + n_t = n$.
+where the summation extends over all nonnegative integral solutions $n_1, n_2, \ldots, n_t$ of $n_1 + n_2 + \cdots + n_t = n$.
 
 ---
 
-### 3.4 Newton's Binomial Theorem | 牛顿二项式定理
+### 5.4 Newton's Binomial Theorem | 牛顿二项式定理
 
 Let $\alpha$ be a real number. Then, for all $x$ and $y$ with $0 \le |x| < |y|$,
 
@@ -167,7 +175,7 @@ where $(\begin{smallmatrix}\alpha\\k\end{smallmatrix})=\frac{\alpha(\alpha-1)\cd
 
 ---
 
-### 3.5 Partially Ordered Sets | 偏序关系
+### 5.5 Partially Ordered Sets | 偏序关系
 
 Let $(X,\le)$ be a finite partially ordered set, and let $r$ be the largest size of a chain. Then $X$ can be partitioned into $r$ but no fewer antichains.
 
@@ -176,7 +184,7 @@ size of an antichain. Then $X$ can be partitioned into $m$ but no fewer chains.
 
 ---
 
-## 4 The Inclusion-Exclusion Principle | 容斥原理
+## 6 The Inclusion-Exclusion Principle | 容斥原理
 
 ---
 
@@ -188,7 +196,7 @@ $$
 
 ---
 
-### 4.1 Permutations with Forbidden Positions
+### 6.1 Permutations with Forbidden Positions
 
 The number of ways to place $n$ nonattacking, indistinguishable rooks
 on an $n$-by-$n$ board with forbidden positions equals
@@ -201,7 +209,7 @@ where $r_k$ is the number of ways to place $k$ nonattacking rooks on the $n$-by-
 
 ---
 
-### 4.2 M$\"o$bius Inversion
+### 6.2 M$\"o$bius Inversion
 
 Let $(X,\le)$ be a partially ordered set with a smallest element $0$. Let $\mu$ be its M$\"o$bius function, and let $F : X \rightarrow \mathfrak{R}$ be a real-valued function defined on $X$. Let the function $G : X \rightarrow \mathfrak{R}$ be defined by $G(x) = \sum_{\{z: z \le x\}} F(z), (x \in X)$. Then
 
@@ -213,11 +221,11 @@ where $\mu * \zeta = \delta$,  the Kronecker delta function is given by $\delta 
 
 ---
 
-## 5 Recurrence Relations and Generating Functions | 递推关系与母函数
+## 7 Recurrence Relations and Generating Functions | 递推关系与母函数
 
 ---
 
-### 5.1 Some Number Sequences
+### 7.1 Some Number Sequences
 
 The Fibonacci numbers satisfy the formula
 
@@ -236,7 +244,7 @@ where $t = \lfloor\frac{n - 1}{2}\rfloor$.
 
 ---
 
-### 5.2 Generating Functions
+### 7.2 Generating Functions
 
 Let $n$ be a positive integer. Then
 
@@ -246,7 +254,7 @@ $$
 
 ---
 
-### 5.3 Exponential Generating Functions
+### 7.3 Exponential Generating Functions
 
 Let $S$ be the multiset $\{n_j \cdot a_j, n_2 \cdot a_2, \ldots, n_k \cdot a_k\}$, where $n_1, n_2, \ldots, n_k$ are nonnegative integers. Let $h_n$ be the number of $n$-permutations of $S$. Then the exponential generating function $g^{(e)}(x)$ for the sequence $h_0, h_1, h_2, \ldots, h_n$ is given by
 
@@ -258,7 +266,7 @@ where, for $i = 1, 2, \ldots, k$, $f_{n_i}(x) = 1 + x + \frac{x^2}{2!} + \cdots 
 
 ---
 
-### 5.4 Solving Linear Homogeneous Recurrence Relations
+### 7.4 Solving Linear Homogeneous Recurrence Relations
 
 Let $q$ be a nonzero number. Then $h_n = q_n$ is a solution of the linear homogeneous recurrence relation
 
@@ -274,7 +282,7 @@ $$
 
 ---
 
-Let $q_l, q_2, \ldots ,q_t$ be the distinct roots of the following characteristic equation of the linear homogeneous recurrence relation with constant coefficients:
+Let $q_1, q_2, \ldots ,q_t$ be the distinct roots of the following characteristic equation of the linear homogeneous recurrence relation with constant coefficients:
 
 $$
 h_n - a_1 h_{n-1} - a_2 h_{n-2} - \cdots - a_k h_{n-k} = 0, (a_k \ne 0, n \ge k).
@@ -310,7 +318,7 @@ where $q(x)$ is a polynomial of degree $k$ with a nonzero constant term and $p(x
 
 ---
 
-### 5.5 Nonhomogeneous Recurrence Relations
+### 7.5 Nonhomogeneous Recurrence Relations
 
 The technique used to solve nonhomogeneous differential equations can be summarized as follows:
 
@@ -320,11 +328,11 @@ The technique used to solve nonhomogeneous differential equations can be summari
 
 ---
 
-## 6 Special Counting Sequences | 非线性递推关系
+## 8 Special Counting Sequences | 非线性递推关系
 
 ---
 
-### 6.1 Catalan Numbers
+### 8.1 Catalan Numbers
 
 The Catalan sequence is the sequence $C_0, C_1, \ldots, C_n, \ldots,$ where
 
@@ -356,7 +364,7 @@ $$
 
 ---
 
-### 6.2 Difference Sequences and Stirling Numbers
+### 8.2 Difference Sequences and Stirling Numbers
 
 Let the general term of a sequence be a polynomial of degree $p$ in $n$:
 
@@ -421,7 +429,7 @@ where $s(p, k)$ are called the Stirling numbers of the first kind, $[n]_p = n(n 
 
 ---
 
-### 6.3 Partition Numbers
+### 8.3 Partition Numbers
 
 Let $n$ and $r$ be positive integers with $r \le n$. Let $p_n(r)$ be the number of partitions of $n$ in which the largest part is $r$, and let $q_n(r)$ be the number of partitions of $n - r$ in which no part is greater than $r$. Then
 
@@ -459,13 +467,13 @@ where $e_n$ is an error term given by $e_n = (-1)^j$ if $n$ is of the form $j(3j
 
 ---
 
-### 6.4 A Geometric Problem
+### 8.4 A Geometric Problem
 
 $h_n^{(k)}$ counts the number of regions into which $k$-dimensional space is divided by $n$ $(k - 1)$-dimensional hyperplanes in general position, where $h_n^{(k)} = \sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}$ which is the sum of the first $k + 1$ numbers in row $n$ of Pascal's triangle.
 
 ---
 
-### 6.5 Lattice Paths and Schr$\"o$der Numbers
+### 8.5 Lattice Paths and Schr$\"o$der Numbers
 
 The number of rectangular lattice paths from $(r, s)$ to $(p, q)$ equals the binomial coefficient
 
@@ -516,58 +524,139 @@ where $R(p, q)$ equal the number of subdiagonal $HVD$-lattice paths from $(0,0)$
 
 ---
 
-## 7 Others | 其他
+## 9 Systems of Distinct Representatives
 
 ---
 
-### 7.1 Systems of Distinct Representatives
+### 9.1 General Problem Formulation
 
-* General Problem Formulation
-* Existence of SDRs
-* Stable Marriages
+Let $Y$ be a finite set, and let $A = (A_1, A_2, \ldots, A_n)$ be a family (a sequence) of $n$ subsets of $Y$.
 
-### 7.2 Combinatorial Designs
-
-* Modular Arithmetic
-* Block Designs
-* Steiner Triple Systems
-* Latin Squares
+* A family $(e_1, e_2, \ldots, e_n)$ of elements of $Y$ is caned a system of representatives of $A$.
+* If the elements are all different, then $(e_1, e_2, \ldots, e_n)$ is called a system of distinct representatives.
 
 ---
 
-### 7.3 Graph Theory
+### 9.2 Existence of SDRs
 
-* Eulerian Trails
-* Hamilton Paths & Cycles
-* Bipartite Multigraphs
-* Trees
-* The Shannon Switching Game
-* Chromatic Number
-* Plane & Planar Graphs
-* A Five-Color Theorem
-* Independence Number & Clique Number
-* Matching Number
-* Connectivity
+* The Marriage Condition. In order for the family $A = (A_1, A_2, \ldots, A_n) of sets to have an SDR, it is necessary that for each $k = 1, 2, \ldots, n$ and each choice of k distinct indices $i_1, i_2, \ldots, i_k$ from $\{1, 2, \ldots, n\}$, $|A_{i_1} \cup A_{i_2} \cup \cdots \cup A_{i_k} | \ge k$.
+* The family $A = (A_1, A_2, \ldots , A_n)$ of subsets of a set $Y$ has an SDR if and only if the marriage condition MC holds.
+* Let $A = (A_1, A_2, \ldots, A_n)$ be a family of subsets of a finite set $Y$. Let $t$ be an integer with $0 \le t \le n$. Then there exists a subfamily of $t$ sets of $A$ that has an SDR if and only if $|A_{i_1} \cup A_{i_2} \cup \cdots \cup A_{i_k} | \ge k- (n - t)$ for all $k$ with $k \ge n-t$ and all choices of $k$ distinct indices $i_1, i_2, \ldots ,i_k$ from $\{1,  2, \ldots, n\}$.
 
 ---
 
-### 7.4 Digraphs and Networks
+### 9.2 Stable Marriages
 
-* Digraphs
-* Networks
-* Matchings in Bipartite Graphs Revisited
-
----
-
-### 7.5 P$\'o$lya Counting
-
-* Permutation & Symmetry Groups
-* Burnside's Theorem
-* Polya's Counting Formula
+* Deferred Acceptance Algorithm. For each preferential ranking matrix, there exists a stable complete marriage.
+* The stable complete marriage obtained from the deferred acceptance algorithm, with the women choosing the men, is women-optimal. If the men choose the women in the deferred acceptance algorithm, the resulting complete marriage is men-optimal.
 
 ---
 
-## 8 References
+## 10 Combinatorial Designs
+
+---
+
+pp. 341.
+
+---
+
+### 10.1 Modular Arithmetic
+
+---
+
+### 10.2 Block Designs
+
+---
+
+### 10.3 Steiner Triple Systems
+
+---
+
+### 10.4 Latin Squares
+
+---
+
+## 11 Graph Theory
+
+---
+
+### 11.1 Eulerian Trails
+
+---
+
+### 11.2 Hamilton Paths & Cycles
+
+---
+
+### 11.3 Bipartite Multigraphs
+
+---
+
+### 11.4 Trees and More
+
+---
+
+### 11.5 The Shannon Switching Game
+
+---
+
+### 11.6 Chromatic Number
+
+---
+
+### 11.7 Plane & Planar Graphs
+
+---
+
+### 11.8 A Five-Color Theorem
+
+---
+
+### 11.9 Independence Number & Clique Number
+
+---
+
+### 11.10 Matching Number
+
+---
+
+### 11.11 Connectivity
+
+---
+
+## 12 Digraphs and Networks
+
+---
+
+### 12.1 Digraphs
+
+---
+
+### 12.2 Networks
+
+---
+
+### 12.3 Matchings in Bipartite Graphs Revisited
+
+---
+
+## 13 P$\'o$lya Counting
+
+---
+
+### 13.1 Permutation & Symmetry Groups
+
+---
+
+### 13.2 Burnside's Theorem
+
+---
+
+### 13.3 Polya's Counting Formula
+
+---
+
+## 14 References
 
 Books
 
