@@ -7,7 +7,7 @@ math: katex
 
 ---
 
-## 1 What ,Is Combinatorics? | 楔子
+## 1 What, Is Combinatorics? | 楔子
 
 ---
 
@@ -554,37 +554,140 @@ Let $Y$ be a finite set, and let $A = (A_1, A_2, \ldots, A_n)$ be a family (a se
 
 ## 10 Combinatorial Designs
 
----
-
-pp. 341.
+A combinatorial design is an arrangement of the objects of a set into subsets satisfying certain prescribed properties.
 
 ---
 
 ### 10.1 Modular Arithmetic
 
+$$
+Z_n= \{0, 1, \ldots, n-1\}.
+$$
+
+For any two integers $a$ and $b$ in $Z_n$,
+
+* $a \bigoplus b$ is the remainder when the ordinary sum $a + b$ is divided by $n$. * An additive inverse of an integer $a$ in $Z_n$ is an integer $b$ in $Z_n$ such that $a \bigoplus b = 0$.
+* $a \bigotimes b$ is the remainder when the ordinary product $a \times b$ is divided by $n$. A multiplicative inverse of an integer $a$ in $Z_n$ is an integer $b$ in $Z_n$ such that $a \bigotimes b = 1$.
+
+---
+
+Let $n$ be an integer with $n \ge 2$ and let $a$ be a nonzero integer in $Z_n$. Then $a$ has a multiplicative inverse in $Z_n$ if and only if the $GCD$ of $a$ and $n$ is $1$. If $a$ has a multiplicative inverse, then it is unique.
+
+---
+
+The complex numbers are obtained from the real numbers by "adjoining" a root. This method can be used to construct fields with $p^k$ elements for every prime $p$ and integer $k \ge 2$, starting from the field $Z_p$.
+
 ---
 
 ### 10.2 Block Designs
+
+Let $X$ be any set of $v$ elements, called varieties, and let $B$ be a collection $B_1, B_2, \ldots, B_b$ of $k$-element subsets of $X$ called blocks. Then $B$ is a balanced block design on $X$, provided that each pair of elements of $X$ occurs together in exactly $\lambda$ blocks. If $k < v$, then $B$ is a balanced incomplete block design, or BIBD for short.
+
+* In a BIBD, each variety is contained in $r=\frac{\lambda(v - 1)}{k-1}$ blocks.
+* In a BIBD, $b \ge v$.
+
+A BIBD example of index $\lambda = 1$ with $v = 7, b = 7, k = 3$:
+
+$$
+B_1 = \{0, 1, 3\}, B_2 = \{1, 2, 4\}, B_3 = \{2, 3, 5\},\\
+B_4 = \{3, 4, 6\}, B_5 = \{0, 4, 5\}, B_6 = \{1, 5, 6\},\\
+B_7 = \{0, 2, 6\}.
+$$
+
+---
+
+Let $B$ be a subset of $k < v$ elements of $Z_v$ that forms a difference set mod $v$. Then the blocks developed from $B$ as a starter block form an SBIBD with index $\lambda = \frac{k(k - 1)}{v - 1}$.
+
+* A BIBD for witch the number $b$ of blocks equals the number $v$ of varieties, is called symmetric, and this is shorten to SBIBD.
 
 ---
 
 ### 10.3 Steiner Triple Systems
 
+BIBDs with block size $k = 2$ are trivial.
+BIBDs with block size $k = 3$ are called Steiner triple systems.
+
+* There is only one instance of a Steiner triple system that forms an SBIBD.
+
+An example of a Steiner triple system of index $\lambda = 1$ with $v = 9$ varieties and $b = 12$ blocks:
+
+$$
+\begin{array}{ccc}
+B_1 = \{0,1,2\} & B_2 = \{3,4,5\} & B_3 = \{6,7,8\}\\
+B_4 = \{0,3,6\} & B_5 = \{1,4,7\} & B_6 = \{2,5,8\}\\
+B_7 = \{0,4,8\} & B_8 = \{2,3,7\} & B_9 = \{1,5,6\}\\
+B_{10} = \{0,5,7\} & B_{11} = \{1,3,8\} & B_{12} = \{2,4,6\}
+\end{array}.
+$$
+
+---
+
+Let $B$ be a Steiner triple system with pammeters $b, v, k = 3, r, \lambda$. Then $r = \frac{\lambda(v - 1)}{2}$ and $b = \frac{\lambda v(v - 1)}{6}$.
+
+---
+
+If there are Steiner triple systems of index $\lambda = 1$ with $v$ and $u$ varieties, respectively, then there is a Steiner triple system of index $\lambda = 1$ with $vu$ varieties.
+
+* Kirkman's schoolgirl problem. A schoolmistress takes her class of $15$ girls on a daily walk. The girls are arranged in five rows, with three girls in each row, so that each
+girl has two companions. Is it possible to plan a walk for seven consecutive days so that no girl will walk with any of her classmates in a triplet more than once?
+
 ---
 
 ### 10.4 Latin Squares
+
+Let $n$ be a positive integer and let $S$ be a set of $n$ distinct elements. A Latin square of order $n$, based on the set $S$, is an n-by-n array, each of whose entries is an element of $S$ such that each of the $n$ elements of $S$ occurs once (and hence exactly once) in each row and once in each column.
+
+* A Latin square of order $n$ corresponds to a partition of the positions of an $n$-by-$n$ array into $n$ sets $A(0), A(1), ... , A(n - 1)$, each consisting of $n$ positions for nonattacking rooks.
+
+An example of Latin squares:
+
+$$
+A =
+\begin{bmatrix}
+0 & 1 & 2 & 3\\
+1 & 2 & 3 & 0\\
+2 & 3 & 0 & 1\\
+3 & 0 & 1 & 2\\
+\end{bmatrix}.
+$$
+
+---
+
+Let $n$ be a positive integer and let $r$ be a nonzero integer in $Z_n$ such that the GCD of $r$ and $n$ is $1$. Let $A$ be the $n$-by-$n$ array whose entry $a_{ij}$ in row $i$ and column $j$ is $a_{ij} = r \times i + j$ (arithmetic mod $n$), $(i,j = 0, 1, ... ,n - 1)$. Then $A$ is a Latin square of order $n$ based on $Z_n$.
+
+* The Latin square of order $n$ constructed  using an integer $r$ with a multiplicative inverse in $Z_n$, will be denoted by $L^r_n$.
+
+---
+
+We refer to mutually orthogonal Latin squares as MOLS. Let $N(n)$ denote the largest number of MOLS of order $n$, we have $N(n) = n - 1$ if $n$ is a prime power.
+
+Let $n \ge 2$ be an integer and let $n = p_1^{e_1} \times p_2^{e_2} \times \cdots p_k^{e_k}$ be the factorization of $n$ into distinct prime numbers $p_1, p_2, \ldots, p_k$. Then $N(n) \ge \min \{p_i^{e_i} - 1: i = 1, 2, \ldots, k\}$.
+
+Let $n \ge 2$ be an integer. If there exist $n - 1$ MOLS of order $n$, then there exists a resolvable BIBD with parameters $b = n^2 + n, v = n^2, k = n, r = n + 1, \lambda = 1$.
 
 ---
 
 ## 11 Graph Theory
 
+Two general graphs $G = (V, E)$ and $G' = (V', E')$ are called isomorphic, provided that there is a one-to-one correspondence $\theta: V \rightarrow V'$ between their vertex sets such that, for each pair of vertices $x$ and $y$ of $V$, there are as many edges of $G$ joining $x$ and $y$ as there are edges of $G'$ joining $\theta(x)$ and $\theta(y)$.
+
 ---
 
 ### 11.1 Eulerian Trails
 
+Let $G$ be a connected general graph. A trail in a general graph $G$ is called Eulerian, provided that it contains every edge of $G$.
+
+* G has a closed Eulerian trail if and only if the degree of each vertex is even.
+* G has an open Eulerian trail if and only if there are exactly two vertices $u$ and $v$ of odd degree. Every open Eulerian trail in $G$ joins $u$ and $v$.
+* Suppose that the number of vertices of $G$ with odd degree is $m > O$. Then the edges of $G$ can be partitioned into $m/2$ open trails. It is impossible to partition the edges of $G$ into fewer than $m/2$ open trails.
+
 ---
 
 ### 11.2 Hamilton Paths & Cycles
+
+---
+
+pp. 414.
 
 ---
 
