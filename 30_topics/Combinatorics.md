@@ -685,29 +685,92 @@ Let $G$ be a connected general graph. A trail in a general graph $G$ is called E
 
 ### 11.2 Hamilton Paths & Cycles
 
----
+A Hamilton cycle of a graph G of order $n$ is a cycle of $G$ of length $n$.
 
-pp. 414.
+* A connected graph of order $n \ge 3$ with a bridge does not have a Hamilton cycle.
+* Let $G$ be a graph of order $n \ge 3$ that satisfies the Ore property. Then $G$ has a Hamilton cycle.
+
+---
+A Hamilton path in $G$ is given by a permutation of the $n$
+vertices of $G$ in which consecutive vertices are joined by an edge of $G$.
+
+* A graph of order $n$, in which the sum of the degrees of each pair of nonadjacent vertices is at least $n - 1$, has a Hamilton path.
 
 ---
 
 ### 11.3 Bipartite Multigraphs
 
+Let $G = (V, E)$ be a multigraph. Then $G$ is called  bipartite, provided that the vertex set $V$ may be partitioned into two subsets $X$ and $Y$ so that each edge of $G$ has one vertex in $X$ and one vertex in $Y$.
+
+* A multigraph is bipartite if and only if each of its cycles has even length.
+* If $|X| \neq |Y|$, then $G$ does not have a Hamilton cycle.
+* If $|X| = |Y|$, then G does not have a Hamilton path that begins at a vertex in $X$ and ends at a vertex in $X$.
+* If $|X| = |Y| + 1$, then $G$ does not have a Hamilton path that begins at $X$ and ends at $Y$.
+* If $X$ and $Y$ differ by at least $2$, then $G$ does not have a Hamilton path.
+
 ---
 
 ### 11.4 Trees and More
+
+A tree is defined to be a connected graph that becomes disconnected upon the removal of any edge.
+
+* A connected graph of order $n \ge 2$ is a tree if and only if it has exactly $n - 1$ edges.
+* Let $G$ be a connected graph of order $n$. Then $G$ is a tree if and only if $G$ does not have any cycles.
+
+---
+
+If we iteratively remove non bridge edges until every edge is a bridge of the remaining graph, we get a spanning subgraph that is a spanning tree of $G$.
+
+* Every connected graph has a spanning tree.
+* Let $T_1$ and $T_2$ be spanning trees of a connected graph $G$. Let $\beta$ be an edge of $T_1$. Then there is an edge $\alpha$ of $T_2$ such that the graph obtained from $T_1$ by inserting $\alpha$ and deleting $\beta$ is a spanning tree of $G$.
+
+Algorithm to grow a spanning tree.
+
+* A breadth-first spanning tree, a depth-first spanning tree.
+* A distance tree (Dijkstra's algorithm), a minimum weight spanning tree(Kruskal's algorithm, Prim's algorithm).
 
 ---
 
 ### 11.5 The Shannon Switching Game
 
+Shannon's game is played by two people, called here the positive player $P$ and the negative player $N$, who alternate turns.
+
+* When it is $N$'s turn, $N$ destroys some edge of $G$ by putting a negative sign - on it.
+* When it is $P$'s turn, $P$ puts a positive sign + on some edge of $G$, which now cannot be destroyed by $N$.
+
+Play proceeds until one of the players achieves his or her goal:
+
+* There is a path between $u$ and $v$ that has only + signs on its edges.
+* Every path in $G$ between $u$ and $v$ contains a - sign on at least one of its edges.
+
+---
+
+The game determined by a multigraph $G = (V, E)$ with distinguished vertices $u$ and $v$ is a positive game if and only if there is a subset $U$ containing $u$ and $v$ of the vertex set $V$ such that the induced multisubgraph $G_U$ has two spanning trees, $T_1$ and $T_2$, with no common edges.
+
 ---
 
 ### 11.6 Chromatic Number
 
+A vertex-coloring of $G$ is an assignment of a color to each of the vertices of $G$ in such a way that adjacent vertices are assigned different colors. The smallest $k$, such that $G$ is $k$-colorable, is called the chromatic number of $G$, denoted by $\chi(G)$.
+
+* Let $G$ be a graph of order $n \ge 1$. Then $1 \le \chi(G) \le n$.
+* Let $G$ be a graph with at least one edge. Then $\chi(G) = 2$ if and only if $G$ is bipartite.
+* Let $G$ be a connected graph for which the maximum degree of a vertex is $\Delta$. If $G$ is neither a complete graph $K_n$ nor an odd cycle graph $C_n$ then $\chi(G) \le \Delta$.
+
+---
+
+For each nonnegative integer $k$, the number of $k$-colorings of the vertices of a graph $G$ is denoted by $p_G(k)$. Repeated use of deletion and contraction gives an algorithm for determining $p_G(k)$.
+
+* Let $G$ be a graph of order $n \ge 1$. Then the number of $k$-colorings of $G$ is a polynomial in $k$ of degree equal to $n$ and this polynomial is computed correctly by the preceding algorithm.
+* Let $U$ be an articulation set of $G$ and suppose that the induced subgraph $G_u$ is a complete graph $K_r$. Let the connected components of $G_{V-U}$ be the induced subgraphs $G_{u_1}, \ldots , G_{u_t}$. For $i = 1, \ldots , t$, let $H_i = G_{U \cup U_i}$ be the subgraph of $G$ induced by $U \cup U_i$. Then $p_G(k) = \frac{p_{H_1}(k) \times \cdots \times p_{H_t}(k)}{([k]_r)^{t-1}}$.
+
 ---
 
 ### 11.7 Plane & Planar Graphs
+
+---
+
+pp. 473.
 
 ---
 
