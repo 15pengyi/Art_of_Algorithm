@@ -768,29 +768,113 @@ For each nonnegative integer $k$, the number of $k$-colorings of the vertices of
 
 ### 11.7 Plane & Planar Graphs
 
----
+Let $G$ be a plane-graph of order $n$ with $e$ edge-curves and assume that $G$ is connected. Then the number $r$ of regions into which $G$ divides the plane satisfies $r = e -n + 2$.
 
-pp. 473.
+* Let $G$ be a connected planar graph. Then there is a vertex of $G$ whose degree is at most $5$, which means the chromatic number of a planar graph G is at most 6.
+
+A graph $G$ is planar if and only if it does not contain a subgraph that contracts to a $K_5$ or a $K_{3,3}$.
 
 ---
 
 ### 11.8 A Five-Color Theorem
 
+The chromatic mumber of a planar graph is at most 5.
+
+* Let there be given a $k$-coloring of the vertices of a graph $H = (U, F)$. Let two of the colors be red and blue, and let $W$ be the subset of vertices in $U$ that are assigned either the color red or the color blue. Let $H_{r,b}$ be the subgraph of $H$ induced by the vertices in $W$ and let $C_{r,b}$ be a connected component of $H_{r,b}$. Interchanging the colors red and blue assigned to the vertices of $C_{r,b}$, we obtain another $k$-coloring of $H$.
+
+---
+
+Hadwiger's conjecture (a connected graph $G$ whose chromatic number satisfies $\chi(G) \ge p$ can be contracted to a $K_p$) holds for $p = 5$ if and only if every planar graph has a 4-coloring.
+
 ---
 
 ### 11.9 Independence Number & Clique Number
+
+A set of vertices $U$ of $G$ is called independent, provided that no two of its vertices are adjacent.
+
+* The chromatic number $\chi(G)$ equals the smallest integer $k$ such that the vertices of $G$ can be partitioned into $k$ independent sets.
+* The largest number of vertices in an independent set is called the independence number of the graph $G$ and is denoted by $\alpha(G)$.
+
+---
+
+A set $W$ of vertices of $G$ is a dominating set, provided that each vertex not in $W$ is adjacent to at least one vertex in $W$.
+
+The smallest number of vertices in a dominating set is the domination number of $G$ and is denoted by $dom(G)$.
+
+* Let $G$ be a connected graph of order $n \ge 2$. Then $dom(G) \le \lfloor \frac{n}{2} \rfloor$.
+
+---
+
+A clique in a graph $G$ is a subset $U$ of vertices, each pair of which is adjacent. The largest number of vertices in a clique is called the clique number of $G$ and is denoted by $\omega(G)$.
+
+A clique-partition of a graph $G$ is a partition of its vertices into cliques. The smallest number of cliques in a clique-partition of $G$ is the clique-partition number of $G$, denoted by $\theta(G)$.
+
+Let $G = (V, E)$ be the complementary graph of $G$, we have
+
+* $\alpha(G) = \omega(\bar{G})$ and $\omega(G) = \alpha(\bar{G})$.
+* $\chi(G) = \theta(G)$ and $\theta(G) = \chi(G)$.
+
+---
+
+A graph $G$ is called $\chi$-perfect, provided that $\chi(H) = \omega(H)$ for every induced subgraph $H$ of $G$. The graph $G$ is $\theta$-perfect, provided that $\theta(H) = \alpha(H)$ for every induced subgraph $H$ of $G$.
+
+* A graph $G$ is $\chi$-perfect if and only if it is $\theta$-perfect. Equivalently, $G$ is $\chi$-perfect if and only if $\bar{G}$ is $\chi$-perfect.
+
+---
+
+Let $G = (V, E)$ be a graph. A chord of a cycle of $G$ is an edge that joins two nonconsecutive vertices of the cycle. A graph is chordal, provided that each cycle of length greater than 3 has a chord.
+
+Let $G$ be the graph whose set of vertices is ${I_1, I_2, \ldots, I_n}$ where two intervals $I_i$ and $I_j$ are adjacent if and only if $I_i \cap I_j \ne \emptyset$. Such a graph $G$ is called a graph of intervals, and any graph isomorphic to a graph of intervals is cailed an interval graph.
+
+* Every interval graph is a chordal graph.
+* Let $G = (V, E)$ be a connected chordal graph and let $U$ be a minimal articulation set of $G$. Then the subgraph $G_U$ induced by $U$ is a complete graph.
+* Every chordal graph is perfect.
 
 ---
 
 ### 11.10 Matching Number
 
+* A set $M$ of edges in $E$ is a matching provided that no two of the edges in $M$ have a vertex in common.
+* The matching $M$ is called a perfect matching of $G$ provided that it meets every vertex of $G$.
+* The matching number of a graph $G$ is the largest number of edges in a matching in $G$ and is denoted by $\rho(G)$.
+
+---
+
+A subset $W$ of the set $V$ of vertices of a graph is a cover of the edges of $G$, abbreviated to a cover of $G$, provided every edge has at least one of its vertices in $W$.
+
+* Let $G = (V, E)$ be a bipartite graph. Then $\rho(G) = c(G)$.
+
+---
+
+Let $oc(G_{V \backslash U})$ be the number of odd components of $G_{V \backslash U}$. Let $G = (V, E)$ be a graph with n vertices.
+
+* $G$ has a perfect matching if and only if $oc(G_{V \backslash U}) \le |U|$ for every $U \subseteq V$.
+* $\rho(G) = \min_{U \subseteq V}\left\{n - \left(oc(G_{V \backslash U}) - |U|\right)\right\}$.
+
 ---
 
 ### 11.11 Connectivity
 
+The vertex-connectivity $\kappa$ of a graph $G$ is defined as follows.
+
+* If $G$ is a complete graph $K_n$ , $\kappa(G) = n - 1$;
+* Otherwise, $\kappa(G) = \min\{|U|: G_{V \backslash U} \; \text{is disconnected} \}$, the smallest number of vertices whose removal leaves a disconnected graph.
+
+The edge-connectivity of a graph $G$ is defined to be the minimum number of edges whose removal disconnects $G$ and is denoted by $\lambda(G)$. Let $\delta(G)$ be the smallest degree of a vertex of $G$, we have
+
+* $\kappa(G) \le \lambda(G) \le \delta(G)$.
+
+---
+
+Let $k$ be a positive integer and let $G$ be a graph of order $n \ge k + 1$. Then $G$ is $k$-connected if and only if, for each pair $a$, $b$ of distinct vertices, there are $k$ paths joining $a$ and $b$ such that each pair of paths has only the vertices $a$ and $b$ in common.
+
 ---
 
 ## 12 Digraphs and Networks
+
+---
+
+pp. 505.
 
 ---
 
