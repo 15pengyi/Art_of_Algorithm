@@ -874,11 +874,13 @@ Let $k$ be a positive integer and let $G$ be a graph of order $n \ge k + 1$. The
 
 ---
 
-pp. 505.
+### 12.1 Digraphs
+
+A digraph $D = (V, A)$ has a set $V$ of elements called vertices and a set $A$ of ordered pairs of not necessarily distinct vertices called arcs.
 
 ---
 
-### 12.1 Digraphs
+pp. 505.
 
 ---
 
