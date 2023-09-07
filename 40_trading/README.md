@@ -46,6 +46,11 @@ $$
 * Quant Researcher: trade size vs. frequency, key metrics (Sharpe ratio - overfitting, CAGR, Max drawdown), simulated test markets.
 * Quantitative trader.
 
+```shell
+pacman -Syu
+pacman -S mingw-w64-x86_64-python-jupyterlab
+```
+
 ## Research
 
 [Huatai Securities](https://inst.htsc.com/research)
