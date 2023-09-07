@@ -1,6 +1,6 @@
 # Trading
 
-## Book
+## Books
 
 [Way of the Turtle: The Secret Methods that Turned Ordinary People into Legendary Traders](https://weread.qq.com/web/bookDetail/a7f3237059b445a7fe05e36)
 
@@ -37,6 +37,14 @@ Unit = \frac{\text{1\% of Account}}{ATR \times \text{Dollars per Point}}.
 $$
 
 [因子投资：方法与实践](https://weread.qq.com/web/bookDetail/a0532d80720439a9a055795)
+
+[Quantitative Trading: How to Build Your Own Algorithmic Trading Business](https://weread.qq.com/web/bookDetail/183325e0811e1a570g013878)
+
+[Python 量化交易](https://weread.qq.com/web/bookDetail/c6332ff07191463ac6344e4)
+
+* Quant Developer: trading strategy module, event-driven module, others (network, system, database).
+* Quant Researcher: trade size vs. frequency, key metrics (Sharpe ratio - overfitting, CAGR, Max drawdown), simulated test markets.
+* Quantitative trader.
 
 ## Research
 
