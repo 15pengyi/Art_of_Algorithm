@@ -48,7 +48,11 @@ $$
 
 ```shell
 pacman -Syu
+pacman -S mingw-w64-x86_64-python-pip
 pacman -S mingw-w64-x86_64-python-jupyterlab
+pacman -S mingw-w64-x86_64-python-pandas
+pacman -S mingw-w64-x86_64-python-scikit-learn
+pacman -S mingw-w64-x86_64-python-matplotlib
 ```
 
 ## Research
